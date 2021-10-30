@@ -1,4 +1,4 @@
-const { request, response } = require("express");
+//const { request, response } = require("express");
 const filmesJson = require("../models/filmes.json");
 
 //chamar o Json
@@ -14,14 +14,14 @@ const getAll = (request, response) => {
 //função getById retorna um filme
 const getById = (request, response) => {
   let idRequest = request.params.id;
-  let idEncontrado = filmesJson.find((filme) => filme.id == idRequest);
+  let idEncontrado = filmesJson.find(filme => filme.id == idRequest);
 
   response.status(200).send(idEncontrado);
 };
 
 const pegarTitulo = (request, response) => {
   //get pelo titulo
-  let tituloRequest = request.query.Title;
+  let tituloRequest = request.query.title;
   let tituloEncontrado = filmesJson.findIndex == tituloRequest;
 
   response.status(200).send(tituloEncontrado);
@@ -35,7 +35,7 @@ const filtrarGenero = (request, response) => {
 
   response.status(200).send(generoEncontrado);
 };
-
+//post
 const createMovie = (request, response) => {
   let body = request.body;
   let novoFilme = {
@@ -64,7 +64,7 @@ const createMovie = (request, response) => {
     },
   ]);
 };
-
+//patch title
 const updateTitle = (request, response) => {
   const idRequest = request.params.id;
   let novoTitulo = request.body.Title;
@@ -76,7 +76,7 @@ const updateTitle = (request, response) => {
     },
   ]);
 };
-
+//put
 const updateMovie = (req, res) => {
     const idRequest = req.params.id;
     let movieRequest = req.body;

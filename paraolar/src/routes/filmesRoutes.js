@@ -1,10 +1,10 @@
 const express = require("express");
 const router = express.Router();
-const controller = require("../controllers/filmesController");
+const controller = require("../controllers/filmesController.js");
 
 router.get("/", controller.getAll);
 router.get("/:id", controller.getById);
-router.get("/titulo", controller.pegarTitulo);
+router.get("/title", controller.pegarTitulo);
 router.get("/filtrar/genre", controller.filtrarGenero);
 router.post("/criar", controller.createMovie);
 router.patch("/update/:id", controller.updateTitle);
